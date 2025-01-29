@@ -1,0 +1,63 @@
+   Compiling slots v0.1.0 (/home/hans/rust/slots)
+error: argument never used
+  --> src/main.rs:56:93
+   |
+56 |             print_bordered_file((width/2)-60 + n, (height/2)-6, &*format!("ascii_art/0.txt",rand_nr), Some('#'));
+   |                                                                           ----------------- ^^^^^^^ argument never used
+   |                                                                           |
+   |                                                                           formatting specifier missing
+
+warning: unused import: `SystemTime`
+ --> src/main.rs:2:27
+  |
+2 | use std::time::{Duration, SystemTime};
+  |                           ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused import: `std::thread::sleep`
+ --> src/main.rs:6:5
+  |
+6 | use std::thread::sleep;
+  |     ^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `style`
+ --> src/main.rs:7:23
+  |
+7 | use termion::{cursor, style};
+  |                       ^^^^^
+
+warning: denote infinite loops with `loop { ... }`
+  --> src/main.rs:48:5
+   |
+48 |     while true {
+   |     ^^^^^^^^^^ help: use `loop`
+   |
+   = note: `#[warn(while_true)]` on by default
+
+warning: use of deprecated function `rand::thread_rng`: renamed to `rng`
+  --> src/main.rs:50:29
+   |
+50 |         let mut rng = rand::thread_rng();
+   |                             ^^^^^^^^^^
+   |
+   = note: `#[warn(deprecated)]` on by default
+
+warning: use of deprecated method `rand::Rng::gen_range`: Renamed to `random_range`
+  --> src/main.rs:55:35
+   |
+55 |             let mut rand_nr = rng.gen_range(1..=reels);
+   |                                   ^^^^^^^^^
+
+warning: variable does not need to be mutable
+  --> src/main.rs:55:17
+   |
+55 |             let mut rand_nr = rng.gen_range(1..=reels);
+   |                 ----^^^^^^^
+   |                 |
+   |                 help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` on by default
+
+warning: `slots` (bin "slots") generated 7 warnings
+error: could not compile `slots` (bin "slots") due to 1 previous error; 7 warnings emitted
